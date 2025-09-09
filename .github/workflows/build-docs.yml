@@ -1,10 +1,8 @@
-name: Build Docs (preprocessor)
+name: Build and Deploy Docs
 
 on:
   push:
     branches: [ main, feature/preprocessor-docs ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -20,8 +18,8 @@ jobs:
       - name: Run preprocessor to build docs
         run: python scripts/build.py
 
-      - name: Upload built docs artifact
-        uses: actions/upload-artifact@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: built-docs
-          path: dist/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
