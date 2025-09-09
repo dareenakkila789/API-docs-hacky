@@ -6,7 +6,6 @@ Intro content...
 
 This is a reusable explanation about how our API works.
 
-I am editing this file now to test the functionality 
-
+Let's edit this reuesable part here and we will se that it will be edited everywhere it is mentioned. 
 
 Thanks!
