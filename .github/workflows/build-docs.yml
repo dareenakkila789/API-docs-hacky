@@ -1,0 +1,27 @@
+name: Build Docs (preprocessor)
+
+on:
+  push:
+    branches: [ main, feature/preprocessor-docs ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Run preprocessor to build docs
+        run: python scripts/build.py
+
+      - name: Upload built docs artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-docs
+          path: dist/

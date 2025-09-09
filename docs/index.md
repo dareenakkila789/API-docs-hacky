@@ -1,9 +1,7 @@
 # Welcome to ABI Docs
 
-This is the introduction page for our documentation.
+Intro content...
 
-Instead of repeating shared content here, we link to a reusable snippet:
+{{ include "snippets/reusable_part.md" }}
 
-👉 See [Reusable Section](../snippets/reusable_part.md).
-
-Thanks for reading!
+Thanks!
